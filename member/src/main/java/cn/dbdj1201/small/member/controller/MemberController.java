@@ -2,7 +2,9 @@ package cn.dbdj1201.small.member.controller;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Objects;
 
+import cn.dbdj1201.small.member.feign.CouponFeignService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +32,17 @@ import cn.dbdj1201.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    @RequestMapping("/testFeign")
+    public R test(){
+        MemberEntity memberEntity = new MemberEntity();
+        memberEntity.setNickname("wa wa");
+        memberEntity.setJob("coder");
+        return Objects.requireNonNull(R.ok().put("member", memberEntity)).put("data",this.couponFeignService.memberCall());
+    }
 
     /**
      * 列表

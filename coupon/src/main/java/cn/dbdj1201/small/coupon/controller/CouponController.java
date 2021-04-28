@@ -1,6 +1,7 @@
 package cn.dbdj1201.small.coupon.controller;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 
 import cn.dbdj1201.common.utils.PageUtils;
@@ -30,6 +31,21 @@ import cn.dbdj1201.small.coupon.service.CouponService;
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    /**
+    test open feign
+     */
+    @RequestMapping("/member/list")
+    public R memberCall(){
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("test");
+        couponEntity.setCouponImg("asdasdasd");
+        couponEntity.setCouponType(2);
+        couponEntity.setCode("543125");
+        couponEntity.setMemberLevel(3);
+        return R.ok().put("coupons", couponEntity);
+    }
+
 
     /**
      * 列表

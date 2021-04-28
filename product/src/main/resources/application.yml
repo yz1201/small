@@ -1,16 +1,18 @@
 server:
-  port: 40923
+  port: 40300
 spring:
   datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-    #MySQL\u914D\u7F6E
+    #type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.94.4.93:3306/small_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: mysql
     password: mysql
   application:
     name: small-product
-
+  cloud:
+    nacos:
+      server-addr: 47.94.4.93:8848
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
