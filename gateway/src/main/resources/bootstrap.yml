@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.94.4.93:8848
+      config:
+        server-addr: 47.94.4.93:8848
+    gateway:
+      routes:
+        - id: test-route
+          uri: https://baidu.com
+          predicates:
+            - Query=name,yeshijie
+#        file-extension: yml
+#        namespace: ea65d118-135f-4928-bbc6-c8ec85b3fd78
