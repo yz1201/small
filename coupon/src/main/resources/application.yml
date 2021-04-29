@@ -1,27 +1,27 @@
-server:
-  port: 40000
-spring:
-  datasource:
-    #    type: com.alibaba.druid.pool.DruidDataSource
-    #MySQL配置
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.94.4.93:3306/small_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: mysql
-    password: mysql
-  application:
-    name: small-coupon
-  cloud:
-    nacos:
-      server-addr: 47.94.4.93:8848
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/**/*.xml
-  global-config:
-    db-config:
-      id-type: auto
-#暴露所有端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+#server:
+#  port: 40000
+#spring:
+#  datasource:
+#    #    type: com.alibaba.druid.pool.DruidDataSource
+#    #MySQL配置
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://47.94.4.93:3306/small_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+#    username: mysql
+#    password: mysql
+#  application:
+#    name: small-coupon
+#  cloud:
+#    nacos:
+#      server-addr: 47.94.4.93:8848
+#
+#mybatis-plus:
+#  mapper-locations: classpath:/mapper/**/*.xml
+#  global-config:
+#    db-config:
+#      id-type: auto
+##暴露所有端点
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'

@@ -17,7 +17,6 @@ import cn.dbdj1201.common.utils.PageUtils;
 import cn.dbdj1201.common.utils.R;
 
 
-
 /**
  * 品牌
  *
@@ -36,7 +35,7 @@ public class BrandController {
      */
     @RequestMapping("/list")
     @RequiresPermissions("product:brand:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = brandService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -48,8 +47,8 @@ public class BrandController {
      */
     @RequestMapping("/info/{brandId}")
     @RequiresPermissions("product:brand:info")
-    public R info(@PathVariable("brandId") Long brandId){
-		BrandEntity brand = brandService.getById(brandId);
+    public R info(@PathVariable("brandId") Long brandId) {
+        BrandEntity brand = brandService.getById(brandId);
 
         return R.ok().put("brand", brand);
     }
@@ -59,8 +58,8 @@ public class BrandController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
-		brandService.save(brand);
+    public R save(@RequestBody BrandEntity brand) {
+        brandService.save(brand);
 
         return R.ok();
     }
@@ -70,8 +69,8 @@ public class BrandController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("product:brand:update")
-    public R update(@RequestBody BrandEntity brand){
-		brandService.updateById(brand);
+    public R update(@RequestBody BrandEntity brand) {
+        brandService.updateById(brand);
 
         return R.ok();
     }
@@ -81,8 +80,8 @@ public class BrandController {
      */
     @RequestMapping("/delete")
     @RequiresPermissions("product:brand:delete")
-    public R delete(@RequestBody Long[] brandIds){
-		brandService.removeByIds(Arrays.asList(brandIds));
+    public R delete(@RequestBody Long[] brandIds) {
+        brandService.removeByIds(Arrays.asList(brandIds));
 
         return R.ok();
     }

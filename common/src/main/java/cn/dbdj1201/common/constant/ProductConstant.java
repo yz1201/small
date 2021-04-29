@@ -7,25 +7,25 @@ package cn.dbdj1201.common.constant;
  */
 public class ProductConstant {
 
-	public enum AttrEnum {
-		//销售属性
-		ATTR_TYPE_BASE(1, "基本属性"), ATTR_TYPE_SALE(0, "销售属性");
+    public enum AttrEnum {
+        //销售属性
+        ATTR_TYPE_BASE(1, "基本属性"), ATTR_TYPE_SALE(0, "销售属性");
 
-		private final int code;
+        private final int code;
 
-		private final String msg;
+        private final String msg;
 
-		AttrEnum(int code, String msg) {
-			this.code = code;
-			this.msg = msg;
-		}
+        AttrEnum(int code, String msg) {
+            this.code = code;
+            this.msg = msg;
+        }
 
-		public int getCode() {
-			return code;
-		}
+        public int getCode() {
+            return code;
+        }
 
-		public String getMsg() {
-			return msg;
-		}
-	}
+        public String getMsg() {
+            return msg;
+        }
+    }
 }

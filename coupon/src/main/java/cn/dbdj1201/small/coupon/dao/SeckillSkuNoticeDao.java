@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 秒杀商品通知订阅
- * 
+ *
  * @author dbdj1201
  * @email 15957121194@163.com
  * @date 2021-04-27 21:45:22
  */
 @Mapper
 public interface SeckillSkuNoticeDao extends BaseMapper<SeckillSkuNoticeEntity> {
-	
+
 }

@@ -3,7 +3,7 @@
 
 <mapper namespace="cn.dbdj1201.small.order.dao.OrderItemDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="cn.dbdj1201.small.order.entity.OrderItemEntity" id="orderItemMap">
         <result property="id" column="id"/>
         <result property="orderId" column="order_id"/>

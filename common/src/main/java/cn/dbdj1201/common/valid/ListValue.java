@@ -16,15 +16,15 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Documented
 // 指定校验器   这里可以指定多个不同的校验器
-@Constraint(validatedBy = { ListValueConstraintValidator.class })
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+@Constraint(validatedBy = {ListValueConstraintValidator.class})
+@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface ListValue {
-	String message() default "{com.firenay.common.valid.ListValue.message}";
+    String message() default "{com.firenay.common.valid.ListValue.message}";
 
-	Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 
-	int[] vals() default { };
+    int[] vals() default {};
 }

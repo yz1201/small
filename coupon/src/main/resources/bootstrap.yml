@@ -5,4 +5,16 @@ spring:
     nacos:
       config:
         server-addr: 47.94.4.93:8848
+        namespace: 64823e3b-23e5-42e1-a1e2-88c0f784c9b1
+        extension-configs[0].data-id: datasource.yml
+        extension-configs[0].group: dev
+        extension-configs[0].refresh: true
 
+        extension-configs[1].data-id: mybatis.yml
+        extension-configs[1].group: dev
+        extension-configs[1].refresh: true
+
+        extension-configs[2].data-id: others.yml
+        extension-configs[2].group: dev
+        extension-configs[2].refresh: true
+      server-addr: 47.94.4.93:8848
