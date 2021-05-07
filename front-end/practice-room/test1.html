@@ -5,18 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+
+        function analyzeIDCard(IDCord) {
+        //获取用户身份证号码
+        var userCard = IDCord;
+        //如果用户身份证号码为undefined则返回空
+        if(!userCard){
+          return '-1';
+        }
+    
+        // 获取出生日期
+        // userCard.substring(6,10) + "-" + userCard.substring(10,12) + "-" + userCard.substring(12,14)
+        var yearBirth = userCard.substring(6,10);
+        var monthBirth = userCard.substring(10,12);
+        var dayBirth = userCard.substring(12,14);
+        // 获取当前年月日并计算年龄
+        var myDate = new Date();
+        var monthNow = myDate.getMonth() + 1;
+        var dayNow = myDate.getDate();
+        var age = myDate.getFullYear() - yearBirth;
+        if(monthNow < monthBirth || (monthNow == monthBirth && dayNow < dayBirth)){
+          age --;
+        }
+        // 得到年龄
+        return age;
+      }
+    
+      /**测试 */
+      var ID = analyzeIDCard('41022219940923351X');
+      console.log(ID);
+    
+        </script>
 </head>
 <body>
-    <script>
-        {
-            var a= 1;
-            let b =2;
-            const c =3;
-        }
-
-        console.log(a);
-        // console.log(b);
-        console.log(c);
-    </script>
+   <input id="test"></input>
 </body>
 </html>
