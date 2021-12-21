@@ -16,7 +16,10 @@ public class TestStream {
 //
 ////        testArray.stream().filter(reqArray::contains).forEach(System.out::println);
 //        System.out.println(testArray.stream().filter(reqArray::contains).collect(Collectors.toList()));
-        test();
+//        test();
+
+        String s = "";
+        System.out.println(s.substring(3, 5));
     }
 
 

@@ -7,9 +7,52 @@ spring:
         server-addr: 47.94.4.93:8848
     gateway:
       routes:
-        - id: test-route
-          uri: https://baidu.com
+        #        - id: test_route
+        #          uri: https://www.baidu.com
+        #          predicates:
+        #            - Query=uri,baidu
+        #
+        #        - id: qq_route
+        #          uri: https://www.qq.com
+        #          predicates:
+        #            - Query=uri,qq
+
+        - id: product_route
+          uri: lb://small-product
           predicates:
-            - Query=name,yeshijie
-#        file-extension: yml
-#        namespace: ea65d118-135f-4928-bbc6-c8ec85b3fd78
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: coupon_route
+          uri: lb://small-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://small-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://small-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: order_route
+          uri: lb://small-order
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+            
+        - id: small_host_route
+          uri: lb://small-product
+          predicates:
+            - Host=small.com,item.small.com
