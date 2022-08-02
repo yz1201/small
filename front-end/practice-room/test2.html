@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [1,2,3,4,5,6,7];
+        // console.log(arr.slice(2,1));
+        // let s = "abcd";
+        // s = s.substr(0,s.length -2);
+        // console.log(s)
+
+        var date = '2021-01-01 12:00:00';
+        var dateTime = date.split(/[\- :]/g);
+        var len = dateTime.length;
+        for (let index = 0; index < len; index++) {
+            console.log(dateTime[index]);            
+        }
+        var dateStr = new Date(dateTime[0],dateTime[1]-1,dateTime[2],dateTime[3],dateTime[4],dateTime[5]).getTime +"";
+        console.log("test - "+dateStr);
+        console.log(typeof dateStr);
+        var date1 =new Date();
+        console.log(date1.getSeconds);
+    </script>
+    
+</body>
+</html>
