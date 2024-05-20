@@ -85,6 +85,7 @@ export default {
     }
   },
   components: {
+  
     Config,
     Upload
   },
